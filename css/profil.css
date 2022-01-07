@@ -1,0 +1,138 @@
+html,body{
+    margin:0;
+    height:100%;
+    scroll-behavior: smooth;
+    color: var(--White-);
+}
+.Container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parallax{
+    background:url(https://preview.redd.it/non7uayabx261.png?auto=webp&s=ea73cbd7264043c75623bdaf5e8fe30cd6c72354) no-repeat center ;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 850px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.parallax h1{
+    font-size: 2em;
+    text-align: center;
+    text-shadow: 2px 2px 4px var(--Black-);
+}
+.box{
+    height: 500px;
+    width: 70%;
+    background-color: var(--BackgroundBody-);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.form-change{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.form-change form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+    height: 300px;
+}
+.form-change form input {
+    font-family: Dreams;
+    outline: 0;
+    background: var(--Background2-);
+    width: 100%;
+    border: 0;
+    margin: 0 0 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+    color: var(--White-);
+}
+.modif {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+        -webkit-tap-highlight-color: transparent;
+}
+
+.modif {
+    width: 150px;
+    height: 60px;
+    cursor: pointer;
+    border: none;
+    font-family: 'Comfortaa', cursive;
+    color: rgba(255,255,255,0.5);
+    font-size: 20px;
+    border-radius: 4px;
+    box-shadow: inset 0px 3px 5px rgba(255,255,255,0.5), 0px 0px 10px rgba(0,0,0,0.15);
+    background: rgb(2,0,36);
+    background: linear-gradient(45deg, rgba(2,0,36,0) 5%, rgba(255,255,255,.5) 6%, rgba(255,255,255,0) 9%, rgba(255,255,255,.5) 10%, rgba(255,255,255,0) 17%, rgba(255,255,255,.5) 19%, rgba(255,255,255,0) 21%);
+    background-size: 150%;
+    background-position: right;
+    transition: 1s;
+}
+
+.modif:hover {
+    background-position: left;
+    color: white;
+    box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
+}
+
+.modif:focus {
+    outline: none;
+}
+.deco {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+        -webkit-tap-highlight-color: transparent;
+}
+
+.deco {
+    width: 150px;
+    height: 60px;
+    cursor: pointer;
+    border: none;
+    font-family: 'Comfortaa', cursive;
+    color: rgba(255,255,255,0.5);
+    font-size: 20px;
+    border-radius: 4px;
+    box-shadow: inset 0px 3px 5px rgba(255,255,255,0.5), 0px 0px 10px rgba(0,0,0,0.15);
+    background: rgb(2,0,36);
+    background: linear-gradient(45deg, rgba(2,0,36,0) 5%, rgba(255,255,255,.5) 6%, rgba(255,255,255,0) 9%, rgba(255,255,255,.5) 10%, rgba(255,255,255,0) 17%, rgba(255,255,255,.5) 19%, rgba(255,255,255,0) 21%);
+    background-size: 150%;
+    background-position: right;
+    transition: 1s;
+}
+
+.deco:hover {
+    background-position: left;
+    color: rgb(255, 0, 0);
+    box-shadow: inset 0px 3px 5px rgb(182, 35, 35), 0px 0px 10px rgba(184, 8, 8, 0.25);
+}
+
+.deco:focus {
+    outline: none;
+}
