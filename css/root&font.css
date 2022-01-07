@@ -1,0 +1,29 @@
+:root{
+    --Transparent-:rgba(255, 255, 255, 0);
+    --Shadow-:rgba(0, 0, 0, 0.39);
+    --White- : #FFFFFF ;
+    --Black- : #000000 ;
+    --Grey- : #757575 ;
+    --Background- : rgb(35, 35, 37);
+    --BackgroundBody- : rgb(45, 45, 47);
+    --Background2- : #33353d;
+    --Button- : #55565d;
+    --Hover- : rgb(130, 131, 56);
+    --Base- : rgb(173, 166, 55);
+    --TextFooter-:#96a2b2;
+    --Color1-:#3b5998;
+    --Color2-:#00aced;
+    --Color3-:#ea4c89;
+    --Color4-:#d8d7d7;
+    --RedError-:rgb(187, 8, 8);
+}
+
+@font-face {
+    font-family: Title;
+    src: url(../font/HandyQuomteRegular-6YLLo.ttf);
+}
+
+@font-face {
+    font-family: Texte;
+    src: url(../font/MornThin-0WLl9.otf);
+}
