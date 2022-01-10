@@ -1,7 +1,7 @@
 <?php
 
 function connect_database() {
-    $bdd =  mysqli_connect('localhost', 'root', 'root', 'livreor');
+    $bdd =  mysqli_connect('localhost', 'francois-nianglo', 'livreormdp', 'francois-niang_livreor');
     mysqli_set_charset($bdd, 'utf8');
     return $bdd;
 }
@@ -87,7 +87,7 @@ function ChangeLogin(){
             $repeatnewlogin = $_POST['repeatnewlogin'];
             if ($login && $newlogin && $repeatnewlogin) {
                 if ($newlogin == $repeatnewlogin) {
-                    $Bdd = mysqli_connect('localhost', 'root', 'root', 'livreor') or die('Erreur');
+                    $Bdd = mysqli_connect('localhost', 'francois-nianglo', 'livreormdp', 'francois-niang_livreor') or die('Erreur');
                     $Requete = mysqli_query($Bdd, "SELECT * FROM utilisateurs WHERE login = '$username' AND login = '$login'");
                     $rows = mysqli_num_rows($Requete);
                     if ($newlogin == $user_login){
