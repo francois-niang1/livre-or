@@ -248,7 +248,7 @@ function delete_com(){
             $row_id = mysqli_num_rows($request_id);
             if($row_id == 1){
                 $delete_user = mysqli_query($bdd, "DELETE FROM commentaires WHERE id = '$id' AND id_utilisateur = '$id_user'");
-                header('Location: mes_commentaires.php');
+                header('Location: my-com.php');
                 exit();
             }
             else{

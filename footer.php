@@ -26,9 +26,17 @@
             <section class="link">
                 <h2>Liens</h2>
                 <ul>
-                    <li> <a href="livre-or.php"> Blog </a></li>
+                    <li> <a href="livre-or.php"> Livre d'or </a></li>
+                    <?php
+                    if(!isset($_SESSION['user'])){
+                    echo '
                     <li> <a href="connexion.php"> Connexion </a></li>
-                    <li> <a href="inscription.php"> Inscription </a></li>
+                    <li> <a href="inscription.php"> Inscription </a></li>';
+                    }
+                    else{
+                    echo'<li> <a href="my-com.php"> Mes Commentaires </a></li>
+                    ';
+                    }?>
                     <li> <a href="profil.php"> Profil </a></li>
                 </ul>
             </section>

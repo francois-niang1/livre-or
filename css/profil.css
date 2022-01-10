@@ -75,7 +75,7 @@ html,body{
 }
 
 .modif {
-    width: 150px;
+    width: auto;
     height: 60px;
     cursor: pointer;
     border: none;
@@ -111,7 +111,7 @@ html,body{
 }
 
 .deco {
-    width: 150px;
+    width: auto;
     height: 60px;
     cursor: pointer;
     border: none;

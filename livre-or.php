@@ -20,7 +20,7 @@ require 'fonctions.php';
         <main>
             <?php if(isset($_SESSION['user'])){?>
                 <div class="text">
-                    <h1><a href="commentaire.php" class="go_to_com">Ecrivez un commentaire ici !!</a></h1>
+                    <h1 data-aos="flip-down" data-aos-duration="1500"><a href="commentaire.php" class="go_to_com">Ecrivez un commentaire ici !!</a></h1>
                 </div>
                 <?php
             }
