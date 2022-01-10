@@ -8,7 +8,8 @@
         <div class = "menu">
             <ul>
                 <li> <a href="index.php">Home</a> </li>
-                <li> <a href="livre-or.php">Blog</a> </li>
+                <li> <a href="livre-or.php">Livre d'or</a> </li>
+                <?php if(isset($_SESSION['user'])){echo'<li> <a href="my-com.php">Mes Commentaires</a> </li>';}?>
                 <li> <a href="profil.php">Profil</a> </li>
             </ul>
             <?php

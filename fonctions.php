@@ -147,4 +147,117 @@ function ChangeMdp(){
         echo ' ';
     }
 }
+
+function new_com(){
+    $bdd = connect_database();
+    if(isset($_POST["commentaire"]) && $_POST["commentaire"] != NULL){
+        $commentaire = $_POST['commentaire'];
+        $id_user = $_SESSION['user']['id'];
+        $new_com_request = mysqli_query($bdd, "INSERT INTO commentaires (commentaire, id_utilisateur) VALUES ('$commentaire', '$id_user')");
+        header('Location: livre-or.php');
+        exit();
+    }
+}
+function display_com(){
+    $bdd = connect_database();
+    $request_com = mysqli_query($bdd, "SELECT * FROM commentaires ORDER BY date DESC");
+    $fetch = mysqli_fetch_all($request_com, MYSQLI_ASSOC);
+    foreach($fetch AS $com){
+        ?>  <div class="all_com" data-aos="zoom-in-up"data-aos-duration="1500">
+                <div class="com_left">
+                    <?php
+                        $id_utilisateur = $com['id_utilisateur'];
+                        $request_user = mysqli_query($bdd, "SELECT * FROM utilisateurs WHERE id ='$id_utilisateur'");
+                        $fetch2 = mysqli_fetch_all($request_user, MYSQLI_ASSOC);
+                        foreach($fetch2 AS $us){
+                            if($us['id'] == $id_utilisateur){
+                                echo 'Commentaire écrit par :<br> '.$us['login'].'</br> le '.$com['date'];
+                                break;
+                            }
+                        }
+                    ?>
+                </div>
+        <?php
+        ?>      <div class="com_right">
+                    <?php echo $com['commentaire'];?>
+                </div>
+            </div>
+<?php
+    }
+}
+function display_all_users(){
+    $bdd = connect_database();
+    $request_all_user = mysqli_query($bdd, 'SELECT * FROM utilisateurs');
+    $fetch_users = mysqli_fetch_all($request_all_user, MYSQLI_ASSOC);
+    ?>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Login</th>
+                </tr>
+            </thead>
+            <tbody>
+    <?php
+    foreach($fetch_users AS $fu){
+        echo '<tr><td>'.$fu['id'].'</td>';
+        echo '<td>'.$fu['login'].'</td></tr>';
+    }
+    ?>
+            </tbody>
+        </table>
+    <?php
+}
+function show_com(){
+    $bdd = connect_database();
+    $id_user = $_SESSION['user']['id'];
+    $request_my_com = mysqli_query($bdd, "SELECT * FROM commentaires WHERE id_utilisateur = '$id_user'");
+    $fetch_coms = mysqli_fetch_all($request_my_com, MYSQLI_ASSOC);
+    $Rows_num_com = mysqli_num_rows($request_my_com);
+    if($Rows_num_com != 0){
+        ?>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Commentaires</th>
+                    </tr>
+                </thead>
+                <tbody>
+        <?php
+        foreach($fetch_coms AS $fc){
+            echo '<tr><td>'.$fc['id'].'</td>';
+            echo '<td>'.$fc['commentaire'].'</td></tr>';
+        }
+        ?>
+                </tbody>
+            </table>
+        <?php
+    }
+    else{
+        echo "<p class='text_change2'>Vous n'avez écrit aucun commentaire.</p>";
+    }
+}
+function delete_com(){
+    $bdd = connect_database();
+    if(isset($_POST['id'])){
+        $id = $_POST['id'];
+        if($id != NULL){
+            $id_user = $_SESSION['user']['id'];
+            $request_id = mysqli_query($bdd, "SELECT * FROM commentaires WHERE id = '$id' AND id_utilisateur = '$id_user'");
+            $row_id = mysqli_num_rows($request_id);
+            if($row_id == 1){
+                $delete_user = mysqli_query($bdd, "DELETE FROM commentaires WHERE id = '$id' AND id_utilisateur = '$id_user'");
+                header('Location: mes_commentaires.php');
+                exit();
+            }
+            else{
+                echo '<p class="erreur">Ce commentaire est inexistant</p>';
+            }
+        }
+        else{
+            echo '<p class="erreur">Veuillez entrer un ID</p>';
+        }
+    }
+}
 ?>
